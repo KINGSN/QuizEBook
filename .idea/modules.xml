@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidEBook.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidEBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/AndroidEBook.SmoothCheckBox-master.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidEBook.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.iml" filepath="$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.main.iml" filepath="$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/expandabletextview/AndroidEBook.expandabletextview.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.main.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/AndroidEBook.folioreader.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/AndroidEBook.nativetemplates.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.iml" filepath="$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/rating-view/AndroidEBook.rating-view.unitTest.iml" />
+    </modules>
+  </component>
+</project>

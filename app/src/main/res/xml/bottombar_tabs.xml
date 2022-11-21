@@ -1,0 +1,40 @@
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_home"
+        marginBottom="1dp"
+        activeColor="@color/colorPrimaryDark"
+        inActiveColor="@color/textView_select_text_home"
+        title="@string/title_home" />
+    <tab
+        id="@+id/tab_quiz"
+        marginBottom="1dp"
+        icon="@drawable/ic_latest"
+        activeColor="@color/colorPrimaryDark"
+        inActiveColor="@color/textView_select_text_home"
+        title="@string/title_quiz" />
+    <tab
+        id="@+id/tab_test"
+        marginBottom="1dp"
+        icon="@drawable/ic_category"
+        activeColor="@color/colorPrimaryDark"
+        inActiveColor="@color/textView_select_text_home"
+        title="@string/title_test" />
+
+    <tab
+        id="@+id/tab_book"
+        marginBottom="1dp"
+        icon="@drawable/ic_read"
+        activeColor="@color/colorPrimaryDark"
+        inActiveColor="@color/textView_select_text_home"
+        title="@string/title_book" />
+
+    <tab
+        id="@+id/tab_profile"
+        marginBottom="1dp"
+        icon="@drawable/ic_profile"
+        activeColor="@color/colorPrimaryDark"
+        inActiveColor="@color/textView_select_text_home"
+        title="@string/title_profile" />
+
+</tabs>

@@ -1,0 +1,68 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    android:id="@+id/con_sub_adapter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="1dp">
+
+
+
+    <RelativeLayout
+        android:id="@+id/mainl"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:id="@+id/l1"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:background="@color/white"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/profile" />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/l1"
+            android:layout_gravity="center_horizontal"
+            android:maxLines="2"
+            android:text="Dailybcb"
+            android:textAlignment="center"
+            android:textSize="11dp" />
+
+
+        <View
+            android:background="@color/gray1"
+            android:layout_width="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

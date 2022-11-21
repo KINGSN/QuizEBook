@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Project exclude paths
+/folioreader/build/
+/nativetemplates/build/
+/nativetemplates/build/intermediates/javac/debug/classes/
