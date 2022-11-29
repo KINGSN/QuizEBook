@@ -58,7 +58,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
     public static CircularProgressIndicatorr progressTimer;
     public MyCountDownTimer myCountDownTimer;
     public MyCountDownTimer myCountDownTimer1;
-    public static long leftTime = 0;
+    public long leftTime = 0;
     public boolean isDialogOpen = false;
     public ImageView imgBookmark;
     public Animation RightSwipe_A, RightSwipe_B, RightSwipe_C, RightSwipe_D, Fade_in, fifty_fifty_anim;
@@ -136,7 +136,8 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
         binding.rightProgress.setMax(my_id_dataArrayList.size());
         binding.wrongProgress.setMax(my_id_dataArrayList.size());
 
-
+        GlobalVariables.LeftTime = 0;
+        leftTime = 0;
         nextQuizQuestion();
 
     }
@@ -184,6 +185,13 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
     private void nextQuizQuestion() {
 
+        if (myCountDownTimer != null) {
+            myCountDownTimer.cancel();
+        }
+        if (myCountDownTimer1 != null) {
+            myCountDownTimer1.cancel();
+            leftTime = 0;
+        }
         binding.aLayout.setBackgroundResource(R.drawable.answer_bg);
         binding.bLayout.setBackgroundResource(R.drawable.answer_bg);
         binding.cLayout.setBackgroundResource(R.drawable.answer_bg);
@@ -282,6 +290,8 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             leftTime = millisUntilFinished;
 
             int progress = (int) (millisUntilFinished / 1000);
+
+            Log.d("KINGSN", "onTick: "+progressTimer);
 
             if (progressTimer == null) {
                 progressTimer = binding.progressBarTwo;
@@ -640,16 +650,18 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
       /*  method.activity.getSupportFragmentManager().popBackStack();
         method.activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentComplete).addToBackStack("tag").commitAllowingStateLoss();
         */
+
         blankAllValue();
+
         /*method.preferencess.removeSharedPreferencesData(method.activity);*/
-       /* if (myCountDownTimer1 != null) {
+        if (myCountDownTimer1 != null) {
             myCountDownTimer1.cancel();
         }
         // TODO Auto-generated method stub
         if (myCountDownTimer != null) {
             myCountDownTimer.cancel();
 
-        }*/
+        }
 
         String topicId="topicid"+my_id_dataArrayList.get(1).getQtopicId();
 
@@ -681,6 +693,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+
     public void PlayAreaLeaveDialog(final Activity context) {
         if (myCountDownTimer != null) {
             myCountDownTimer.cancel();
@@ -689,7 +702,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             myCountDownTimer1.cancel();
 
         }
-       // GlobalVariables.LeftTime = leftTime;
+        GlobalVariables.LeftTime = leftTime;
 
         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
 
