@@ -132,7 +132,7 @@ public class CircularProgressIndicatorr extends View {
                 startAngle = DEFAULT_PROGRESS_START_ANGLE;
             }
 
-            direction = a.getInt(R.styleable.DirectionalViewpager_direction, DIRECTION_COUNTERCLOCKWISE);
+            direction = a.getInt(R.styleable.CircularProgressIndicator2_direction2, DIRECTION_COUNTERCLOCKWISE);
 
             String formattingPattern = a.getString(R.styleable.CircularProgressIndicator2_formattingPattern);
             if (formattingPattern != null) {

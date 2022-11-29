@@ -7,13 +7,14 @@ import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.example.androidebookapp.item.QuizCategoryList;
 import com.example.androidebookapp.util.GlobalVariables;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SharedPrefrence {
@@ -117,7 +118,7 @@ public class SharedPrefrence {
 
     }
 
-    public void setBooleanValue(String Tag, boolean token) {
+    public static void setBooleanValue(String Tag, boolean token) {
         prefsEditor.putBoolean(Tag, token);
         prefsEditor.commit();
     }
@@ -279,7 +280,15 @@ public class SharedPrefrence {
         editor.commit();
     }
 
+    public void saveArrayList(List<QuizCategoryList> list, String key, Context context){
+        Gson gson = new Gson();
+        String hashMapString = gson.toJson(list);
+        Log.d("KINGSN", "setParentUser2: "+hashMapString);
+        prefsEditor.putString(key, hashMapString);
+        prefsEditor.apply();
 
+
+    }
 
 
    /* public void setParentUser2(UserDTO userDTO, String tag) {

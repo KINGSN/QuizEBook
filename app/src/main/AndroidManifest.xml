@@ -92,6 +92,22 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.example.androidebookapp.activity.ActivityComplete"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.example.androidebookapp.activity.SettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.example.androidebookapp.activity.ReviewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.example.androidebookapp.activity.BookmarkList"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />

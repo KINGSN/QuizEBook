@@ -60,7 +60,7 @@ public class BookChapterAdapter extends RecyclerView.Adapter {
     private List<BookChapterList> bookChapterLists;
     private  Intent intent;
     public  String language;
-    public ArrayList<BookSubjectList> my_id_dataArrayList1;
+    public ArrayList<BookSubjectList> my_id_dataArrayList1= new ArrayList<>();
     private OnClick onClick;
     private BookChapterAdapter categoryAdapter;
     public BookSubCatAdapter categoryAdapterr;
@@ -115,8 +115,6 @@ public class BookChapterAdapter extends RecyclerView.Adapter {
             final ViewHolder viewHolder = (ViewHolder) holder;
 
             viewHolder.section3.setVisibility(View.GONE);
-
-
 
             viewHolder.chaptitle.setText(bookChapterLists.get(position).getChapSubjTitle());
             viewHolder.chaptitle.setVisibility(View.VISIBLE);
@@ -410,6 +408,9 @@ public class BookChapterAdapter extends RecyclerView.Adapter {
 
     public void getQuestionsFromJson(Activity activity,String id) {
         Log.d("KINGSHIN", "getMyId:subjecttabfrag ");
+
+
+       // GlobalVariables.questionlist.clear();
         method.params.clear();
         method.params.put("topic_id",id);
         method.params.put("user_id",method.userId());

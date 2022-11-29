@@ -32,6 +32,7 @@ import com.example.androidebookapp.activity.SearchBook;
 import com.example.androidebookapp.adapter.booksdapter.BookdailyBoosterAdapter;
 import com.example.androidebookapp.adapter.booksdapter.BookhCategoryAdapterr;
 import com.example.androidebookapp.adapter.quizadapter.QuizHomeAdapter;
+import com.example.androidebookapp.database.DatabaseHandler;
 import com.example.androidebookapp.fragment.bookfragments.BookFragment;
 import com.example.androidebookapp.interfaces.OnClick;
 import com.example.androidebookapp.item.BookSubCategoryList;
@@ -66,6 +67,7 @@ public class QuizHomeFragment extends Fragment {
     private Boolean isOver = false;
     private int paginationIndex = 1;
     private String adsParam = "1";
+    public DatabaseHandler db;
 
 
     private ArrayList<BookSubCategoryList> my_id_dataArrayList;
@@ -215,6 +217,17 @@ public class QuizHomeFragment extends Fragment {
                         for(int i=0;i<GlobalVariables.quizCategoryLists.size();i++){
                             int j=i;
 
+
+/*
+                            db=new DatabaseHandler(requireActivity());
+
+                           db.addQuizCategory(GlobalVariables.quizCategoryLists.get(i).getCategory_name(),
+                                   GlobalVariables.quizCategoryLists.get(i).getCat_image(),
+                                   "1",
+                                   "1");
+
+                         //   Log.d("KINGSN", "getMyId: "+db.QuizCategory(1));
+                            Log.d("KINGSN4U", "getMyId: "+db.getAllCodes("0"));*/
 
                             bookdailyBoosterAdapter = new BookdailyBoosterAdapter(getActivity(),  GlobalVariables.categoryLists,j, "category", onClick);
                             dailyboosterre.setAdapter(bookdailyBoosterAdapter);

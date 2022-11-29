@@ -405,6 +405,8 @@ public class HomeFragment extends Fragment {
                                    /* homeCatAdapter = new HomeCatAdapter(getActivity(), homeRP.getCategoryLists(), "home_cat", onClick);
                                     recyclerViewCat.setAdapter(homeCatAdapter);*/
                                     GlobalVariables.quizCategoryLists= homeRP.getQuizcategoryLists();
+//                                    method.preferencess.saveArrayList(homeRP.getQuizcategoryLists(),"QuizcategoryList",requireActivity());
+
 
                                     Log.d("KINGSN", "onResponse: "+GlobalVariables.categoryLists.get(0).getCategory_name().toString());
                                 } /*else {

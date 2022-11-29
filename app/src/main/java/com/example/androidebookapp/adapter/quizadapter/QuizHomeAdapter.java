@@ -58,6 +58,7 @@ public class QuizHomeAdapter extends RecyclerView.Adapter<QuizHomeAdapter.ViewHo
     private final int VIEW_TYPE_ITEM = 1;
     private final int VIEW_TYPE_Ad = 2;
       public  int j;
+
     public QuizHomeAdapter(Activity activity, List<QuizCategoryList> categoryLists, int i, String type, OnClick onClick) {
         this.activity = activity;
         this.type = type;

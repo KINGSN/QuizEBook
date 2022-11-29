@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuestionList implements Serializable {
 
@@ -43,6 +45,9 @@ public class QuestionList implements Serializable {
     @SerializedName("answer")
     @Expose
     private String answer;
+    @SerializedName("trueAns")
+    @Expose
+    private String trueAns;
     @SerializedName("level")
     @Expose
     private String level;
@@ -52,7 +57,18 @@ public class QuestionList implements Serializable {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("options")
+    @Expose
 
+    private ArrayList<String> options = new ArrayList<String>();
+
+    public ArrayList<String> getOptions() {
+        return options;
+    }
+
+    public void setOptions(ArrayList<String> options) {
+        this.options = options;
+    }
 
     public String getId() {
         return id;
@@ -148,6 +164,14 @@ public class QuestionList implements Serializable {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getTrueAns() {
+        return trueAns;
+    }
+
+    public void setTrueAns(String trueAns) {
+        this.trueAns = trueAns;
     }
 
     public String getLevel() {

@@ -34,10 +34,10 @@
 
                 <attr name="startAngle" format="integer|reference" />
 
-              <!--  <attr name="direction" format="enum">
+                <attr name="direction2" format="enum">
                         <enum name="clockwise" value="0"/>
                         <enum name="counterclockwise" value="1"/>
-                </attr>-->
+                </attr>
 
         </declare-styleable>
         <declare-styleable name="CircleImageView">

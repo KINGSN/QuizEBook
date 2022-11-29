@@ -319,5 +319,11 @@ public class GlobalVariables {
     public static int CATE_ID;
     public static int SUB_CAT_ID;
 
-    public static ArrayList<QuestionList> questionlist;
+    public static ArrayList<QuestionList> questionlist= new ArrayList<>();
+
+    public static final String COUNT_QUESTION_COMPLETED = "count_question_completed";
+    public static final String COUNT_RIGHT_ANSWARE_QUESTIONS = "count_right_answare_questions";
+    public static final String LEVEL_COMPLETED_ACHIVEMENT = "level_completed_achivement";
+    public static final String LEVEL_COMPLETED = "level_completed";
+    public static final String IS_LAST_LEVEL_COMPLETED = "is_last_level_completed";
 }

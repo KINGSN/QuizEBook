@@ -3,16 +3,43 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-night/ic_more.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-night/ic_music.xml" value="0.151" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/answer_bg.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/bg_gradient.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/circle_progress_bg.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/drop_shadow.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/ic_delete.xml" value="0.151" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/ic_mark.xml" value="0.1" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable-xhdpi/timer_bg.xml" value="0.1" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/fab_bg.xml" value="0.151" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/home_line.xml" value="0.1" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/ic_bookmark1.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/ic_more.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/ic_next.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/ic_preview.xml" value="0.151" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/drawable/ic_text.xml" value="0.151" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_book_subject.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_bookmark_list.xml" value="0.2" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_complete.xml" value="0.25" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_quiz_play.xml" value="0.18" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_quizchapter.xml" value="0.1" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_review.xml" value="0.2" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_setting.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_settings.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_splash_screen.xml" value="0.11096014492753623" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/activity_terms.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/admob_ad.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/book_view_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/bookmark_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/fragment_complete.xml" value="0.23725671918443003" />
         <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/note_dialog_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/layout/progress_dialogpdf.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/menu/menu_scd.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/app/src/main/res/menu/setting_menu.xml" value="0.1" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/folioreader/res/layout/progress_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidEBook1/AndroidEBook/folioreader/res/menu/menu_main.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

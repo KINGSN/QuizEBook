@@ -52,7 +52,9 @@ import com.example.androidebookapp.rest.ApiClient;
 import com.example.androidebookapp.rest.ApiInterface;
 import com.example.androidebookapp.util.API;
 import com.example.androidebookapp.util.BannerAds;
+import com.example.androidebookapp.util.BookmarkDBHelper;
 import com.example.androidebookapp.util.Constant;
+import com.example.androidebookapp.util.DBHelper;
 import com.example.androidebookapp.util.Events;
 import com.example.androidebookapp.util.GlobalBus;
 import com.example.androidebookapp.util.Method;
@@ -82,6 +84,7 @@ import com.roughike.bottombar.OnTabSelectListener;
 import org.greenrobot.eventbus.Subscribe;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -104,6 +107,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean doubleBackToExitPressedOnce = false;
     private String id = "", subId = "", title = "", type = "";
     BottomBar bottomBar;
+    @SuppressLint("StaticFieldLeak")
+    public static DBHelper dbHelper;
+    @SuppressLint("StaticFieldLeak")
+    public static BookmarkDBHelper bookmarkDBHelper;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -130,6 +137,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (NoSuchAlgorithmException e) {
 
         }
+
+
 
         GlobalBus.getBus().register(this);
 
@@ -174,6 +183,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             method.alertBox(getResources().getString(R.string.internet_connection));
         }
 
+       /* try {
+            dbHelper = new DBHelper(getApplicationContext());
+            bookmarkDBHelper = new BookmarkDBHelper(getApplicationContext());
+            dbHelper.createDatabase();
+            bookmarkDBHelper.createDatabase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
         binding.bottombar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -624,6 +641,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
 
     }
+
+
 
 }
 

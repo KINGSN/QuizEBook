@@ -33,6 +33,10 @@ public class CategoryList implements Serializable {
     @SerializedName("sub_cat_status")
     private String sub_cat_status;
 
+    public CategoryList(String string, String string1, String string2, String string3, String string4) {
+
+    }
+
     public boolean isIs_ads() {
         return is_ads;
     }

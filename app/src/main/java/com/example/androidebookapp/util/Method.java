@@ -11,6 +11,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -29,6 +31,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxAdListener;
 import com.applovin.mediation.MaxError;
@@ -100,27 +105,60 @@ public class Method {
     public String show_login = "show_login";
     public String notification = "notification";
     public String themSetting = "them";
-
-
+    private static Context mContext;
+    public static MediaPlayer player;
+    public static String mAppUrl;
     private OnClick onClick;
+    public static com.android.volley.toolbox.ImageLoader mImageLoader;
+    public static RequestQueue mRequestQueue;
 
     @SuppressLint("CommitPrefEdits")
     public Method(Activity activity) {
-
-        preferencess = SharedPrefrence.getInstance(activity);
         this.activity = activity;
+        preferencess = SharedPrefrence.getInstance(activity);
         pref = activity.getSharedPreferences(myPreference, 0); // 0 - for private mode
         editor = pref.edit();
-
-
+        setContext(activity.getApplicationContext());
+        player = new MediaPlayer();
+        mediaPlayerInitializer();
+        mAppUrl = StaticUtils.PLAYSTORE_URL + mContext.getPackageName();
     }
-
+    public static void mediaPlayerInitializer(){
+        try {
+            player = MediaPlayer.create(mContext.getApplicationContext(), R.raw.snd_bg);
+            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            player.setLooping(true);
+            player.setVolume(1f, 1f);
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void setContext(Context context) {
+        mContext = context;
+    }
     @SuppressLint("CommitPrefEdits")
     public Method(Activity activity, OnClick onClick) {
         this.activity = activity;
         this.onClick = onClick;
         pref = activity.getSharedPreferences(myPreference, 0); // 0 - for private mode
         editor = pref.edit();
+
+    }
+
+    public static void getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(mContext);
+        }
+
+    }
+
+    public static com.android.volley.toolbox.ImageLoader getImageLoader() {
+        getRequestQueue();
+        if (mImageLoader == null) {
+            mImageLoader = new ImageLoader(mRequestQueue,
+                    new BitmapCache());
+        }
+        return mImageLoader;
     }
 
     public void login() {
@@ -746,5 +784,26 @@ public class Method {
             default:
                 return false;
         }
+    }
+
+    public static void playSound()
+    {
+        try {
+            if (SharedPrefrence.getMusicEnableDisable(mContext)&&!player.isPlaying()) {
+                player.start();
+            }else{
+            }
+
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+            mediaPlayerInitializer();
+            player.start();
+        }
+    }
+    public static void StopSound() {
+        if (player.isPlaying()) {
+            player.pause();
+        }
+
     }
 }
