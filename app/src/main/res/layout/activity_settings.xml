@@ -4,8 +4,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="top">
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+      <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/transparent"
+            app:title=" Settings "
+            app:titleTextColor="@color/white" />
+
+      </com.google.android.material.appbar.AppBarLayout>
+
+      <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="25dp"
@@ -14,7 +36,6 @@
         >
 
         <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/rootView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -369,6 +390,6 @@
                 </ScrollView>
             </RelativeLayout>
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
+      </androidx.cardview.widget.CardView>
+     </RelativeLayout>
 </layout>

@@ -375,13 +375,18 @@
 
         </RelativeLayout>
 
+      <!--  -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;BookMark-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
         <RelativeLayout
             android:id="@+id/fabLayout"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/left_rigth_margin_score_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/left_rigth_margin_score_button"
+            android:layout_marginTop="@dimen/left_rigth_margin_score_button"
+            android:layout_marginEnd="@dimen/left_rigth_margin_score_button"
+            android:layout_marginBottom="@dimen/left_rigth_margin_score_button"
             android:background="@drawable/fab_bg"
             android:layoutDirection="ltr">
 

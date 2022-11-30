@@ -29,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.bumptech.glide.Glide;
 import com.example.androidebookapp.R;
 import com.example.androidebookapp.databinding.ActivityQuizPlayBinding;
@@ -74,9 +75,11 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             rightAns;
     int click = 0;
     int textSize;
-    private Animation animation;
+    private Animation animation,animation1;
     public static Callback mCallback = null;
     private static int levelNo = 1;
+    ImageLoader imageLoader = method.getImageLoader();
+
     public void setCallback(Callback callback) {
         mCallback = callback;
     }
@@ -104,6 +107,8 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
         animation.setRepeatCount(Animation.INFINITE); // Repeat animation
         animation.setRepeatMode(Animation.REVERSE); // Reverse animation at the
 
+        animation1 = AnimationUtils.loadAnimation(method.activity, R.anim.bounce); // Change alpha from fully visible
+        animation.setDuration(500);
 
         binding.progressBarTwo.setMaxProgress(GlobalVariables.CIRCULAR_MAX_PROGRESS);
         binding.progressBarTwo.setCurrentProgress(GlobalVariables.CIRCULAR_MAX_PROGRESS);
@@ -115,9 +120,13 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
         resetAllValue();
 
+
+
         binding.toolbar.setNavigationOnClickListener(view -> {
             PlayAreaLeaveDialog(method.activity);
         });
+
+
 
     }
 
@@ -132,6 +141,8 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
         binding.bLayout.setOnClickListener(this);
         binding.cLayout.setOnClickListener(this);
         binding.dLayout.setOnClickListener(this);
+        binding.prev.setOnClickListener(this);
+        binding.next.setOnClickListener(this);
 
         binding.rightProgress.setMax(my_id_dataArrayList.size());
         binding.wrongProgress.setMax(my_id_dataArrayList.size());
@@ -183,8 +194,9 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
+    @SuppressLint("SetTextI18n")
     private void nextQuizQuestion() {
-
+        binding.cardView1.setVisibility(View.GONE);
         if (myCountDownTimer != null) {
             myCountDownTimer.cancel();
         }
@@ -215,18 +227,21 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
         binding.txtQuestion1.startAnimation(Fade_in);
 
         if (questionIndex < my_id_dataArrayList.size()) {
+            binding.questionNo.setText("Question No :  " + (questionIndex + 1) + "/" + my_id_dataArrayList.size());
             question = my_id_dataArrayList.get(questionIndex);
             int temp = questionIndex;
             binding.imgQuestion.resetZoom();
-            binding.txtQuestionIndex.setText(++temp + "/" + my_id_dataArrayList.size());
+            binding.txtQuestionIndex.setText("Question No :  " + (questionIndex + 1) + "/" + my_id_dataArrayList.size());
+            binding.txtQuestionIndex.setVisibility(View.VISIBLE);
             if (!question.getImage().isEmpty()) {
                 binding.imgZoom.setVisibility(View.VISIBLE);
+                binding.txtQuestion.setText(Html.fromHtml(question.getQuestion()));
+                binding.txtQuestion1.setText(Html.fromHtml(question.getQuestion()));
                 binding.txtQuestion1.setVisibility(View.VISIBLE);
                 binding. txtQuestion.setVisibility(View.GONE);
-              //  binding. imgQuestion.setImageUrl(question.getImage());
-                Glide.with(method.activity).load(question.getImage())
-                        .placeholder(null)
-                        .into(binding.imgQuestion);
+                binding.imgQuestion.setImageUrl(question.getImage(), imageLoader);
+
+
                 binding. imgQuestion.setVisibility(View.VISIBLE);
                 binding. imgProgress.setVisibility(View.GONE);
                 binding. imgZoom.setOnClickListener(new View.OnClickListener() {
@@ -296,13 +311,13 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
             if (progressTimer == null) {
                 progressTimer = binding.progressBarTwo;
             } else {
-                progressTimer.setCurrentProgress(progress);
+                binding.progressBarTwo.setCurrentProgress(progress);
             }
             //when left last 5 second we show progress color red
             if (millisUntilFinished <= 6000) {
-                progressTimer.SetTimerAttributes(Color.RED, Color.parseColor(GlobalVariables.PROGRESS_BG_COLOR), Color.RED, GlobalVariables.PROGRESS_TEXT_SIZE);
+                binding.progressBarTwo.SetTimerAttributes(Color.RED, Color.parseColor(GlobalVariables.PROGRESS_BG_COLOR), Color.RED, GlobalVariables.PROGRESS_TEXT_SIZE);
             } else {
-                progressTimer.SetTimerAttributes(Color.parseColor(GlobalVariables.PROGRESS_COLOR), Color.parseColor(GlobalVariables.PROGRESS_BG_COLOR), Color.WHITE, GlobalVariables.PROGRESS_TEXT_SIZE);
+                binding.progressBarTwo.SetTimerAttributes(Color.parseColor(GlobalVariables.PROGRESS_COLOR), Color.parseColor(GlobalVariables.PROGRESS_BG_COLOR), Color.WHITE, GlobalVariables.PROGRESS_TEXT_SIZE);
             }
         }
 
@@ -526,6 +541,8 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
                         }
                         questionIndex++;
                     }
+
+
                     if (myCountDownTimer != null) {
                         myCountDownTimer.cancel();
                     }
@@ -536,7 +553,28 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
                     break;
             }
 
+
+
         }
+
+        binding.prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (questionIndex > 0) {
+                    questionIndex--;
+                    Log.d("KINGSN", "onClick:qINDEX "+questionIndex);
+                    nextQuizQuestion();
+                }
+
+            }
+        });
+
+        binding.next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextQuizQuestion();
+            }
+        });
     }
 
     private void addScore() {
@@ -609,6 +647,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
     //add attended question in ReviewList
     public void AddReview(QuestionList question, TextView tvBtnOpt) {
+
         reviews.add(new Review(question.getId(),
                 question.getQuestion(),
                 question.getImage(),
@@ -619,8 +658,28 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
 
         leftTime = 0;
         GlobalVariables.LeftTime = 0;
-        new Handler().postDelayed(mUpdateUITimerTask, 1000);
+
         binding.txtScore.setText(String.valueOf(score));
+
+
+        if (!my_id_dataArrayList.get(questionIndex).getNote().isEmpty()) {
+            String solution = my_id_dataArrayList.get(questionIndex).getNote();
+            binding.tvSolution.setText(solution);
+            binding.cardView1.setVisibility(View.VISIBLE);
+            Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+            fadeInAnimation.setDuration(500);
+
+            binding.tvSolution.startAnimation(fadeInAnimation);
+            // binding.tvSolution.setAnimation(animation1);
+
+
+          //  new Handler().postDelayed(mUpdateUITimerTask, 3000);
+
+        } else {
+            binding.cardView1.setVisibility(View.GONE);
+            new Handler().postDelayed(mUpdateUITimerTask, 1000);
+        }
+
     }
 
     //play sound when answer is correct
@@ -716,6 +775,7 @@ public class QuizPlayActivity extends AppCompatActivity implements View.OnClickL
                 // Write your code here to execute after dialog closed.
                 blankAllValue();
                 QuizPlayActivity.this.finishAndRemoveTask();
+                reviews.clear();
                 finish();
                 leftTime = 0;
                 GlobalVariables.LeftTime = 0;

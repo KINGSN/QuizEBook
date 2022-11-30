@@ -23,6 +23,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.multidex.BuildConfig;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxError;
@@ -439,9 +440,12 @@ public class BookHomeAdapter extends RecyclerView.Adapter {
                         // setData();
 
                         viewholder.recyclerView_bookTab.setHasFixedSize(true);
-                        RecyclerView.LayoutManager layoutManagerCat = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
+                       /* RecyclerView.LayoutManager layoutManagerCat = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
                         viewholder. recyclerView_bookTab.setLayoutManager(layoutManagerCat);
-                        viewholder.recyclerView_bookTab.setFocusable(false);
+                        viewholder.recyclerView_bookTab.setFocusable(false);*/
+
+                        viewholder.recyclerView_bookTab.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
+                        viewholder.recyclerView_bookTab.setHasFixedSize(true);
 
 
                         if (my_id_dataArrayList1.size() > 0) {
@@ -450,9 +454,12 @@ public class BookHomeAdapter extends RecyclerView.Adapter {
                             viewholder.recyclerView_bookTab.setAdapter(categoryAdapterr);
                           /*  viewholder.recyclerView_bookTab.setLayoutManager(new ScrollingLinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false, 7000));
 */
-                            RecyclerView.LayoutManager layoutManagerAuthor = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
+                           /* RecyclerView.LayoutManager layoutManagerAuthor = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
                             viewholder.recyclerView_bookTab.setLayoutManager(layoutManagerAuthor);
-                            viewholder.recyclerView_bookTab.setFocusable(false);
+                            viewholder.recyclerView_bookTab.setFocusable(false);*/
+
+                            viewholder.recyclerView_bookTab.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
+                            viewholder.recyclerView_bookTab.setHasFixedSize(true);
 
                         }
                         hideHeader();

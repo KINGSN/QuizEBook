@@ -40,7 +40,7 @@ public class BookSubjectActivity extends AppCompatActivity {
     ActivityBookSubjectBinding binding;
     private Method method;
     private OnClick onClick;
-    private String authorType, authorId,subjecttype,SubjectName;
+    private String authorType, authorId,subjecttype,screenType,SubjectName,subjectType;
     private List<AuthorList> authorLists;
     private InputMethodManager imm;
     private SubjectTabAdapter subjectTabAdapter;
@@ -69,12 +69,12 @@ public class BookSubjectActivity extends AppCompatActivity {
         if (getIntent().hasExtra("screenType")) {
             sid=getIntent().getStringExtra("Sid");
             subjecttype=getIntent().getStringExtra("screenType");
-            SubjectName=getIntent().getStringExtra("SubjectName");
+            screenType=getIntent().getStringExtra("screenType");
+            subjectType=getIntent().getStringExtra("QuizSubjectActivity");
         }
 
 
-        subjectTabAdapter=new SubjectTabAdapter(BookSubjectActivity.this,getSupportFragmentManager(),getLifecycle(),
-                sid,subjecttype,SubjectName);
+
 
         viewPager= binding.viewPager;
         binding.toolbar.setTitle(SubjectName);
@@ -86,6 +86,9 @@ public class BookSubjectActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("English"));
         tabLayout.addTab(tabLayout.newTab().setText("Hindi"));
 
+
+        subjectTabAdapter=new SubjectTabAdapter(BookSubjectActivity.this,getSupportFragmentManager(),getLifecycle(),
+                sid,subjecttype,SubjectName);
 
         binding.viewPager.setAdapter(subjectTabAdapter);
 

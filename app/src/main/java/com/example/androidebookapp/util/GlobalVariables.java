@@ -326,4 +326,5 @@ public class GlobalVariables {
     public static final String LEVEL_COMPLETED_ACHIVEMENT = "level_completed_achivement";
     public static final String LEVEL_COMPLETED = "level_completed";
     public static final String IS_LAST_LEVEL_COMPLETED = "is_last_level_completed";
+    public static String white="#FFFFF";
 }

@@ -3,7 +3,7 @@
     <dimen name="enchanted_view_pager_margin">5dp</dimen>
     <dimen name="applovin_banner_height">50dp</dimen>
     <dimen name="view_left_right_margin">10dip</dimen>
-    <dimen name="left_rigth_margin_score_button">10dp</dimen>
+    <dimen name="left_rigth_margin_score_button">8dp</dimen>
 
     <dimen name="progress_h_w">50dp</dimen>
     <dimen name="circle_progress">35dp</dimen>

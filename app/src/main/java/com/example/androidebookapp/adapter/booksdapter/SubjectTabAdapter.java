@@ -1,6 +1,7 @@
 package com.example.androidebookapp.adapter.booksdapter;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -25,6 +26,8 @@ public class SubjectTabAdapter extends FragmentStateAdapter {
         subcategory=sid;
         subjecttype=subjectType;
         Subject_name=SubjectName;
+        Log.d("KINGSN", "SubjectTabAdapter: "+subcategory);
+
     }
 
 

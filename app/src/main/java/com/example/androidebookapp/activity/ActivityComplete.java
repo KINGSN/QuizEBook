@@ -57,11 +57,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ActivityComplete extends AppCompatActivity implements View.OnClickListener  {
     public CircularProgressIndicator2 result_prog;
     Menu toolbarMenu;
+    public static ArrayList<Review> reviews ;
     ActivityCompleteBinding binding;
     public Method method;
     public SharedPreferences settings;
@@ -107,6 +109,7 @@ public class ActivityComplete extends AppCompatActivity implements View.OnClickL
 
         binding.toolbar.setTitle("Result");
         binding.toolbar.setNavigationOnClickListener(view -> {
+            QuizPlayActivity.reviews.clear();
             super.onBackPressed();
         });
         
@@ -531,6 +534,8 @@ public class ActivityComplete extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
+        QuizPlayActivity.reviews.clear();
         super.onBackPressed();
+
     }
 }

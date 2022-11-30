@@ -45,7 +45,7 @@ public class subjectTabFragmentHn extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    String SubCat;
+   public String SubCat;
     private int paginationIndex = 1;
     public subjectTabFragmentHn(String Lang, String subcategory,String subjectType,String SubjectName) {
         // Required empty public constructor
@@ -53,6 +53,7 @@ public class subjectTabFragmentHn extends Fragment {
         this.SubCat=subcategory;
         subjecttype=subjectType;
         Subject_name=SubjectName;
+        Log.d("KINGSN", "SubjectTabAdapter: "+subcategory);
     }
 
 
@@ -80,11 +81,8 @@ public class subjectTabFragmentHn extends Fragment {
                 if (!isOver) {
                     new Handler().postDelayed(() -> {
                         paginationIndex++;
-                        if(subjecttype=="QuizSubjectActivity"){
-                            getMyId(requireActivity(),RestAPI.get_QuizSubjects);
-                        }else{
-                            getMyId(requireActivity(),RestAPI.get_bookSubjects);
-                        }
+                            getMyId(requireActivity(),RestAPI.get_QuizSubjects,SubCat);
+
                     }, 1000);
                 } else {
                     BookSubjectAdapter.hideHeader();
@@ -92,21 +90,18 @@ public class subjectTabFragmentHn extends Fragment {
             }
         });
 
-        if(Objects.equals(subjecttype, "QuizSubjectActivity")){
-            getMyId(requireActivity(),RestAPI.get_QuizSubjects);
-        }else{
-            getMyId(requireActivity(),RestAPI.get_bookSubjects);
-        }
+        getMyId(requireActivity(),RestAPI.get_QuizSubjects,SubCat);
 
         return view;
     }
 
-    public void getMyId(Activity activity,String Api) {
+    public void getMyId(Activity activity,String Api,String SubCatt) {
         binding.progressBarHome.setVisibility(View.VISIBLE);
         Log.d("KINGSHIN", "getMyId:subjecttabfrag ");
        method.params.clear();
-       method.params.put("languageType","2" );
-       method.params.put("Subcategory",SubCat );
+        method.params.put("languageType","2" );
+        //method.params.put("Subcategory",SubCat );
+        method.params.put("Subcategory", SubCatt );
         // method.showToasty(activity,"1",""+GlobalVariables.adminUserID);
         Log.d(GlobalVariables.TAG, "getHomeData2: called"+activity.toString());
         new HttpsRequest(Api, method.params, activity).stringPost2(GlobalVariables.TAG, new Helper() {

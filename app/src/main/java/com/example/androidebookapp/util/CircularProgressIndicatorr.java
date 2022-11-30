@@ -43,6 +43,7 @@ public class CircularProgressIndicatorr extends View {
     private static final int DESIRED_WIDTH_DP = 150;
 
     private static final String DEFAULT_PROGRESS_COLOR = GlobalVariables.PROGRESS_COLOR;
+    private static final String DEFAULT_timer_COLOR = GlobalVariables.white;
     private static final int DEFAULT_TEXT_SIZE_SP = GlobalVariables.PROGRESS_TEXT_SIZE;
     private static final int DEFAULT_STROKE_WIDTH_DP = GlobalVariables.PROGRESS_STROKE_WIDTH;
     private static final String DEFAULT_PROGRESS_BACKGROUND_COLOR = GlobalVariables.PROGRESS_BG_COLOR;
@@ -107,7 +108,7 @@ public class CircularProgressIndicatorr extends View {
         int progressColor = Color.parseColor(DEFAULT_PROGRESS_COLOR);
         int progressBackgroundColor = Color.parseColor(DEFAULT_PROGRESS_BACKGROUND_COLOR);
         int progressStrokeWidth = dp2px(DEFAULT_STROKE_WIDTH_DP);
-        int textColor = progressColor;
+        int textColor = Color.parseColor(DEFAULT_PROGRESS_COLOR);;
         int textSize = sp2px(DEFAULT_TEXT_SIZE_SP);
 
         shouldDrawDot = true;

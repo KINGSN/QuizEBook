@@ -53,6 +53,8 @@ public class subjectTabFragment extends Fragment {
         this.SubCat=subcategory;
         subjecttype=subjectType;
         Subject_name=SubjectName;
+
+        Log.d("KINGSNH", "subjectTabFragment: "+SubCat);
     }
 
 
@@ -80,10 +82,10 @@ public class subjectTabFragment extends Fragment {
                     new Handler().postDelayed(() -> {
                         paginationIndex++;
                        // getMyId(requireActivity());
-                        if(subjecttype=="QuizSubjectActivity"){
-                            getMyId(requireActivity(),RestAPI.get_QuizSubjects);
+                        if(Objects.equals(subjecttype, "QuizSubjectActivity")){
+                            getMyId(requireActivity(),RestAPI.get_QuizSubjects,SubCat);
                         }else{
-                            getMyId(requireActivity(),RestAPI.get_bookSubjects);
+                            getMyId(requireActivity(),RestAPI.get_bookSubjects,SubCat);
                         }
                     }, 1000);
                 } else {
@@ -91,22 +93,21 @@ public class subjectTabFragment extends Fragment {
                 }
             }
         });
-            if(Objects.equals(subjecttype, "QuizSubjectActivity")){
-                getMyId(requireActivity(),RestAPI.get_QuizSubjects);
-            }else{
-                getMyId(requireActivity(),RestAPI.get_bookSubjects);
-            }
+
+
+                getMyId(requireActivity(),RestAPI.get_QuizSubjects,SubCat);
 
 
         return view;
     }
 
-    public void getMyId(Activity activity,String Api) {
+    public void getMyId(Activity activity,String Api,String SubCatt) {
         binding.progressBarHome.setVisibility(View.VISIBLE);
         Log.d("KINGSHIN", "getMyId:subjecttabfragi ");
        method.params.clear();
        method.params.put("languageType","1" );
-       method.params.put("Subcategory",SubCat );
+       //method.params.put("Subcategory",SubCat );
+       method.params.put("Subcategory", SubCatt );
         // method.showToasty(activity,"1",""+GlobalVariables.adminUserID);
         Log.d(GlobalVariables.TAG, "getHomeData2: called"+method.params);
         new HttpsRequest(Api, method.params, activity).stringPost2(GlobalVariables.TAG, new Helper() {

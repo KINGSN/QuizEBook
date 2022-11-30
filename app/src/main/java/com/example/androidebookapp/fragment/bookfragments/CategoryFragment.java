@@ -68,7 +68,7 @@ public class CategoryFragment extends Fragment {
     private ConstraintLayout conNoData;
     private String catType, catId;
     private ProgressBar progressBar;
-    private List<CategoryList> categoryLists;
+    private List<CategoryList> categoryLists= new ArrayList<>();
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
     private Boolean isOver = false;
@@ -93,7 +93,6 @@ public class CategoryFragment extends Fragment {
         int resId = R.anim.layout_animation_fall_down;
         animation = AnimationUtils.loadLayoutAnimation(getActivity(), resId);
 
-        categoryLists = new ArrayList<>();
 
 
         onClick = (position, type, id, subId, title, fileType, fileUrl, otherData) -> {
@@ -203,6 +202,7 @@ public class CategoryFragment extends Fragment {
                         try {
 
                             CatSpinnerRP catSpinnerRP = response.body();
+                            Log.d("KINGSNDB", "onResponse: "+catSpinnerRP.getCatSpinnerLists().get(0).getCategory_name());
                             assert catSpinnerRP != null;
                             if (catSpinnerRP.getStatus().equals("1")) {
                                 showSearch(catSpinnerRP);
@@ -350,7 +350,7 @@ public class CategoryFragment extends Fragment {
                                         recyclerView.setLayoutAnimation(animation);
                                     }
                                 } else {
-                                    categoryAdapter.notifyDataSetChanged();
+                                    //categoryAdapter.notifyDataSetChanged();
                                 }
 
                             } else {

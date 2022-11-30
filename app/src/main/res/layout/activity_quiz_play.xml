@@ -1,5 +1,4 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="top">
@@ -74,15 +73,30 @@
 
                 android:layoutDirection="ltr">
 
+                <TextView
+                    android:id="@+id/questionNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Question : 1/10"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
 
                 <LinearLayout
                     android:id="@+id/score_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_margin="@dimen/left_rigth_margin_score_button"
+                    android:layout_below="@+id/questionNo"
+                    android:layout_marginStart="@dimen/left_rigth_margin_score_button"
+                    android:layout_marginTop="@dimen/left_rigth_margin_score_button"
+                    android:layout_marginEnd="@dimen/left_rigth_margin_score_button"
+                    android:layout_marginBottom="@dimen/left_rigth_margin_score_button"
                     android:orientation="horizontal"
                     android:weightSum="3">
+
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -90,8 +104,8 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:visibility="invisible"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="invisible">
 
                         <ImageView
                             android:id="@+id/imgCoin"
@@ -129,13 +143,13 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:visibility="invisible"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="start"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="invisible">
 
 
                         <ImageView
@@ -171,8 +185,8 @@
                 <TextView
                     android:id="@+id/txtQuestionIndex"
                     android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:text="@string/zero"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                     android:textColor="@color/colorPrimaryDark"
@@ -377,8 +391,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="16dp"
                                         android:layout_marginTop="@dimen/left_rigth_margin_score_button"
-                                        android:clickable="true"
                                         android:layout_marginEnd="16dp"
+                                        android:clickable="true"
                                         app:cardBackgroundColor="@color/white"
                                         app:cardCornerRadius="25dp"
                                         app:cardElevation="5dp">
@@ -415,7 +429,6 @@
                                                 android:paddingBottom="4dp"
                                                 android:text="@string/answer"
                                                 android:textColor="@color/colorPrimaryDark" />
-
 
 
                                         </RelativeLayout>
@@ -465,7 +478,6 @@
                                                 android:textColor="@color/colorPrimaryDark" />
 
 
-
                                         </RelativeLayout>
                                     </androidx.cardview.widget.CardView>
 
@@ -505,7 +517,7 @@
                                                 android:layout_height="match_parent"
                                                 android:layout_centerVertical="true"
                                                 android:layout_marginEnd="5dp"
-                                              android:layout_toEndOf="@+id/option_c"
+                                                android:layout_toEndOf="@+id/option_c"
                                                 android:paddingTop="4dp"
                                                 android:paddingBottom="4dp"
                                                 android:text="@string/answer"
@@ -568,6 +580,71 @@
                             </LinearLayout>
                         </RelativeLayout>
                     </ScrollView>
+                </RelativeLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_below="@id/main_layout"
+                    android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:padding="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="@dimen/left_rigth_margin_score_button"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="10dp"
+                    android:background="@drawable/answer_bg"
+                    android:visibility="visible"
+                    app:cardUseCompatPadding="true">
+
+
+
+                        <TextView
+                            android:id="@+id/tvSolution"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="serif"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:text="@string/note"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14dp" />
+
+
+
+
+                </androidx.cardview.widget.CardView>
+                </ScrollView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layoutDirection="ltr">
+
+                    <ImageView
+                        android:id="@+id/prev"
+                        android:focusable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_preview" />
+
+
+                    <ImageView
+                        android:id="@+id/next"
+                        android:focusable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/ic_next"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
 

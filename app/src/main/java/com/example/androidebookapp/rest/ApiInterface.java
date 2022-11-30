@@ -23,6 +23,7 @@ import com.example.androidebookapp.response.LoginRP;
 import com.example.androidebookapp.response.MyRatingRP;
 import com.example.androidebookapp.response.PrivacyPolicyRP;
 import com.example.androidebookapp.response.ProfileRP;
+import com.example.androidebookapp.response.QuizSpinnerRP;
 import com.example.androidebookapp.response.RatingRP;
 import com.example.androidebookapp.response.RegisterRP;
 import com.example.androidebookapp.response.SubCatRP;
@@ -100,6 +101,11 @@ public interface ApiInterface {
     @POST("api.php")
     @FormUrlEncoded
     Call<CatSpinnerRP> getCatSpinner(@Field("data") String data);
+
+    //Quiz category spinner list
+    @POST("api.php")
+    @FormUrlEncoded
+    Call<QuizSpinnerRP> getQuizcatSpinner(@Field("data") String data);
 
     //sub category spinner list
     @POST("api.php")
